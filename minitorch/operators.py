@@ -115,6 +115,19 @@ def relu_back(x: float, grad: float) -> float:
     return grad if x > 0.0 else 0.0
 
 
+def sigmoid_back(x: float, grad: float) -> float:
+    """Backward sigmoid."""
+
+    s = sigmoid(x)
+    return s * (1 - s) * grad
+
+
+def exp_back(x: float, grad: float) -> float:
+    """Backward exp."""
+
+    return exp(x)
+
+
 # ## Task 0.3
 
 # Small practice library of elementary higher-order functions.
